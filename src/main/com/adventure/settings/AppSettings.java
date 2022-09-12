@@ -10,7 +10,6 @@ public class AppSettings {
 
         Invalid_Beginning,
         MT1_Beginning,
-
         MT2_CaveEscape,
         MT3_TestDirections,
         MT4_HouseAndCave,
