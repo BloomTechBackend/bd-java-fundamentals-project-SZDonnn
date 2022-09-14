@@ -4,7 +4,6 @@ import main.com.adventure.settings.Command;
 import main.com.adventure.settings.CommandConstants;
 
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class GameInputProcessor {
@@ -62,10 +61,9 @@ public class GameInputProcessor {
         if (input.contains(" ")) {
             int indexOfWhiteSpace = input.indexOf(" ");
             String verbInput = input.substring(0, indexOfWhiteSpace);
-            String objInput = input.substring(indexOfWhiteSpace+1);
+            String objInput = input.substring(indexOfWhiteSpace + 1);
             return new Command(verbInput.trim(), objInput.trim());
-        }
-        else {
+        } else {
             return new Command(input.trim());
         }
 
