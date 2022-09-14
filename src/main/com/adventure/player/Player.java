@@ -53,6 +53,7 @@ public class Player {
 
 
 
+
     /**
      * Sprint 2 Module 2
      * The move function takes two parameters: a direction string and an isValidDirection boolean.
@@ -72,7 +73,23 @@ public class Player {
      * @return true if the move is executed. Otherwise, false.
      */
     public boolean move(String direction, boolean isValidDirection) {
-        return true;
+        if (isValidDirection){
+            if (direction.equalsIgnoreCase("east")){
+                currentLocationIndex++;
+            }
+            else if (direction.equalsIgnoreCase("west")){
+                currentLocationIndex--;
+            }
+            else {
+                System.out.print(direction.trim().toUpperCase() + " is not a valid direction");
+                return false;
+            }
+            return true;
+        }
+        else {
+            System.out.print(direction.trim().toUpperCase() + " is not a valid direction");
+            return false;
+        }
     }
 
     /**
