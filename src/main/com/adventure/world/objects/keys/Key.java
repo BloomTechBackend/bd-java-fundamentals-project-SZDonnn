@@ -18,22 +18,44 @@ import main.com.adventure.world.objects.Tangible;
 public class Key implements Tangible {
 
     //TODO variable for level and name needed here
+    private int level;
+    private String name;
 
     //TODO Add default (i.e. no params) constructor here
+    /** Key constructor to take input value level
+     * to param level property. **/
+    public Key() {
+        level = 1;
+        name = "key";
+    }
 
     //TODO add constructor that takes a level, and saves it
+    /** Key constructor to take input value.
+     * @param level
+     * to param level property. **/
+    public Key(int level) {
+        this.level = level;
+    }
 
     //TODO add constructor that takes a level and name, and saves it
+    /** Key constructor to take input value.
+     * @param level and
+     * @param name
+     * to @param level and @param name property. **/
+    public Key(int level, String name) {
+        this.level = level;
+        this.name = name;
+    }
 
+    //TODO Fix this so it references the level property instead of 0
     public int getLevel() {
-        //TODO Fix this so it references the level property instead of 0
-        return 0;
+        return level;
     }
 
     //TODO Fix this so it references the name property instead of "key"
     @Override
     public String getName() {
-        return "key";
+        return name;
     }
 
 
