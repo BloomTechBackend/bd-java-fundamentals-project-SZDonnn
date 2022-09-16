@@ -78,9 +78,9 @@ main/com/adventure/settings/AppSettings.java
  main.com.adventure.settings.AppSettings$Story
 main/com/adventure/settings/GameController.java
  main.com.adventure.settings.GameController
-main/com/adventure/world/objects/HoleContent.java
- main.com.adventure.world.objects.HoleContent
 main/com/adventure/world/scenes/s2_m4/DigEscapeScene.java
  main.com.adventure.world.scenes.s2_m4.DigEscapeScene
+main/com/adventure/world/objects/HoleContent.java
+ main.com.adventure.world.objects.HoleContent
 main/com/adventure/world/objects/Hole.java
  main.com.adventure.world.objects.Hole
