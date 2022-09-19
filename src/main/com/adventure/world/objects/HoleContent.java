@@ -6,9 +6,16 @@ public class HoleContent {
     private Key content;
     private boolean isCovered = true;
 
+    /**
+     * Constructor HoleContent with no parameters.
+     */
     public HoleContent() {
     }
 
+    /**
+     * Constructor HoleContent.
+     * @param key - for updating content property.
+     */
     public HoleContent(Key key) {
         content = key;
     }
