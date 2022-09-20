@@ -68,20 +68,20 @@ main/com/adventure/world/World.java
  main.com.adventure.world.World
  main.com.adventure.world.World$1
  main.com.adventure.world.World$ConsoleEscapeTangibleListener
-main/com/adventure/settings/Command.java
- main.com.adventure.settings.Command
-main/com/adventure/settings/CommandVerb.java
- main.com.adventure.settings.CommandVerb
-main/com/adventure/player/Player.java
- main.com.adventure.player.Player
 main/com/adventure/settings/AppSettings.java
  main.com.adventure.settings.AppSettings
  main.com.adventure.settings.AppSettings$1
  main.com.adventure.settings.AppSettings$Story
 main/com/adventure/Main.java
  main.com.adventure.Main
+main/com/adventure/player/Player.java
+ main.com.adventure.player.Player
 main/com/adventure/GameInputProcessor.java
  main.com.adventure.GameInputProcessor
+main/com/adventure/settings/Command.java
+ main.com.adventure.settings.Command
+main/com/adventure/settings/CommandVerb.java
+ main.com.adventure.settings.CommandVerb
 main/com/adventure/settings/GameController.java
  main.com.adventure.settings.GameController
  main.com.adventure.settings.GameController$1

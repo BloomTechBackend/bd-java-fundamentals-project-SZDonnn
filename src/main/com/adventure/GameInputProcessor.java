@@ -66,7 +66,6 @@ public class GameInputProcessor {
         } else {
             return new Command(CommandVerb.getVerb(input.trim()));
         }
-
     }
 
 

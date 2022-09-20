@@ -19,34 +19,35 @@ public enum CommandVerb {
     //Used in Sprint 3 Module 3
     INVENTORY;
 
-
     /**
      * Takes verbString to determine and return the associated CommandVerb.
      * @param verbString - the verb from the user input
      * @return - the CommandVerb associated with the given input.
      */
     public static CommandVerb getVerb(String verbString) {
-        if(verbString.equalsIgnoreCase(CommandVerb.TAKE.name())) {
-            return CommandVerb.TAKE;
+        CommandVerb commandVerb;
+        if (verbString.equalsIgnoreCase(CommandVerb.TAKE.name())) {
+            commandVerb = CommandVerb.TAKE;
         } else if (verbString.equalsIgnoreCase(CommandVerb.MOVE.name())) {
-            return CommandVerb.MOVE;
+            commandVerb = CommandVerb.MOVE;
         } else if (verbString.equalsIgnoreCase(CommandVerb.USE.name())) {
-            return CommandVerb.USE;
+            commandVerb = CommandVerb.USE;
         } else if (verbString.equalsIgnoreCase(CommandVerb.DIG.name())) {
-            return CommandVerb.DIG;
+            commandVerb = CommandVerb.DIG;
         } else if (verbString.equalsIgnoreCase(CommandVerb.EXAMINE.name())) {
-            return CommandVerb.EXAMINE;
+            commandVerb = CommandVerb.EXAMINE;
         } else if (verbString.equalsIgnoreCase(CommandVerb.LOOK.name())) {
-            return CommandVerb.LOOK;
+            commandVerb = CommandVerb.LOOK;
         } else if (verbString.equalsIgnoreCase(CommandVerb.HELP.name())) {
-            return CommandVerb.HELP;
+            commandVerb = CommandVerb.HELP;
         } else if (verbString.equalsIgnoreCase(CommandVerb.FIGHT.name())) {
-            return CommandVerb.FIGHT;
+            commandVerb = CommandVerb.FIGHT;
         } else if (verbString.equalsIgnoreCase(CommandVerb.INVENTORY.name())) {
-            return CommandVerb.INVENTORY;
+            commandVerb = CommandVerb.INVENTORY;
         } else {
-            return CommandVerb.INVALID;
+            commandVerb = CommandVerb.INVALID;
         }
+        return commandVerb;
     }
 
 }
