@@ -2,6 +2,7 @@ package main.com.adventure;
 
 import main.com.adventure.settings.Command;
 import main.com.adventure.settings.CommandConstants;
+import main.com.adventure.settings.CommandVerb;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -34,8 +35,7 @@ public class GameInputProcessor {
      */
     private Command buildSimpleCommand(String input) {
         String trimInput = input.trim();
-        String concatInput = trimInput.substring(0, input.indexOf(" "));
-        return new Command(concatInput);
+        return new Command(CommandVerb.getVerb(trimInput));
     }
 
     /**
@@ -62,9 +62,9 @@ public class GameInputProcessor {
             int indexOfWhiteSpace = input.indexOf(" ");
             String verbInput = input.substring(0, indexOfWhiteSpace);
             String objInput = input.substring(indexOfWhiteSpace + 1);
-            return new Command(verbInput.trim(), objInput.trim());
+            return new Command(CommandVerb.getVerb(verbInput.trim()), objInput.trim());
         } else {
-            return new Command(input.trim());
+            return new Command(CommandVerb.getVerb(input.trim()));
         }
 
     }
