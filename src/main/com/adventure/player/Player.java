@@ -10,17 +10,14 @@ public class Player {
 
     public int level = 5;
     private int currentLocationIndex = AppSettings.getStartingLocation();
-    private Key key;
-    private Shovel shovel;
     private int power = 1;
     private int health = 10;
-
     private String name;
-
+    private Backpack backpack = new Backpack();
 
     /**
      * Sprint 2 Module 1
-     * Saves the player's name. This file should store the name so it can be referenced later. After setting the name,
+     * Saves the player's name. This file should store the name, so it can be referenced later. After setting the name,
      * inform the user that the name has been changed by saying "Your name is now {name}".
      * @param newName - the player's name that will be saved
      */
@@ -48,11 +45,6 @@ public class Player {
     public boolean canOpenDoor() {
         return (float) level / 2 > 2;
     }
-
-
-
-
-
 
     /**
      * Sprint 2 Module 2
@@ -97,6 +89,18 @@ public class Player {
      */
     public void setWeapon(Weapon item) {
         //TODO Complete this function in Sprint 3 Module 2
+        Player player = new Player();
+        player.power = item.getPower();
+    }
+
+    /**
+     * Sprint 3 Module 3
+     * Stores an item into the backpack.
+     * @param item - item to add.
+     */
+    public void addItem(Tangible item) {
+        //TODO Complete this function
+        backpack.addItem(item);
     }
 
     /**
@@ -107,7 +111,7 @@ public class Player {
      */
     public Tangible getItem(String itemName) {
         //TODO Complete this function in Sprint 3 Module 3
-        return null;
+        return backpack.getItem(itemName);
     }
 
     /**
@@ -118,7 +122,13 @@ public class Player {
      */
     public Tangible removeItem(Tangible item) {
         //TODO Complete this function in Sprint 3 Module 3
-        return null;
+        Tangible returnThis;
+        if (backpack.removeItem(item)) {
+            returnThis = item;
+        } else {
+            returnThis = null;
+        }
+        return returnThis;
     }
 
     /**
@@ -127,31 +137,39 @@ public class Player {
      */
     public void printItems() {
         //TODO Complete this function in Sprint 3 Module 3
+        this.backpack.printItems();
     }
 
     /**
-     * Sprint 3 Module 3
-     * Stores an item into the backpack.
-     * @param item - item to add.
+     * Adding Key item to the backpack.
+     * @param item - refers to a key.
      */
-    public void addItem(Tangible item) {
-        //TODO Complete this function
-    }
-
     public void setKey(Key item) {
-        key = item;
+        backpack.addItem(item);
     }
 
-    public Key getKey() {
-        return key;
+    /**
+     * Getting the key from backpack.
+     * @return referring to the "key".
+     */
+    public Tangible getKey() {
+        return backpack.getItem("key");
     }
 
+    /**
+     * Adding Shovel item to the backpack.
+     * @param item - refers to a shovel.
+     */
     public void setShovel(Shovel item) {
-        shovel = item;
+        backpack.addItem(item);
     }
 
-    public Shovel getShovel() {
-        return shovel;
+    /**
+     * Getting the shovel from backpack.
+     * @return referring to the "shovel".
+     */
+    public Tangible getShovel() {
+        return backpack.getItem("shovel");
     }
 
     //////// DON'T CHANGE THE CODE BELOW. ///////////

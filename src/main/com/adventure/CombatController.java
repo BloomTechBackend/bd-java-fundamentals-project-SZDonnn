@@ -7,6 +7,7 @@ public class CombatController {
 
     private Player player;
     private Monster monster;
+    private boolean isPlayerDefeated = false;
 
     /**
      * Processes a combat situation between the player and a monster.
@@ -23,17 +24,28 @@ public class CombatController {
      * or the player's health is 0. The player always goes first.
      */
     public void autosimulateCombat() {
-
+        boolean turn = true;
+        while (player.getHealth() > 0 && monster.getHealth() > 0) {
+            if (turn) {
+                monster.setHealth(monster.getHealth() - player.getPower());
+                turn = false;
+            } else {
+                player.setHealth(player.getHealth() - monster.getPower());
+                turn = true;
+            }
+        }
+        this.isPlayerDefeated = player.getHealth() <= 0;
     }
 
     public boolean isPlayerDefeated() {
-        return false;
+        return isPlayerDefeated;
     }
 
     /**
      * Resets the health of the monster and player back to 10.
      */
     public void reset() {
-
+        player.setHealth(10);
+        monster.setHealth(10);
     }
 }
