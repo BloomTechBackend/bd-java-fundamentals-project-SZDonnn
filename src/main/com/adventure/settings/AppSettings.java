@@ -18,6 +18,7 @@ public class AppSettings {
         MT6_TestDirections,
         MT7_MonsterScene,
         MT8,
+        MT9,
 
     }
 

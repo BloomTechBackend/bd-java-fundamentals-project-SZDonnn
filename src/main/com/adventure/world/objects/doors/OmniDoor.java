@@ -19,6 +19,8 @@ import java.util.Random;
  * to give you a key's first incorrect pin without any consequence.
  */
 
+
+
 public class OmniDoor implements Tangible {
 
     /**
@@ -58,6 +60,16 @@ public class OmniDoor implements Tangible {
      */
     public void unlock(OmniKey key) {
         //TODO Complete the function
+        for (int index = 0; index < pinCount; index++) {
+            if (key.pins[index] != pins[index]) {
+                isOpen = false;
+                randomizePins();
+                break;
+            } else {
+                System.out.println("The door is unlocked!");
+                isOpen = true;
+            }
+        }
     }
 
     /**
@@ -76,7 +88,18 @@ public class OmniDoor implements Tangible {
      */
     public int getFirstWrongPin(OmniKey key) {
         //TODO Complete the function
-        return 0;
+        int wrongIndex = 0;
+        for (int index = 0; index < pinCount; index++) {
+            if (key.pins[index] != pins[index]) {
+                wrongIndex = index;
+                break;
+            } else {
+                if (index == (pinCount-1)) {
+                    return -1;
+                }
+            }
+        }
+        return wrongIndex;
     }
 
     //Tangible implementation//
