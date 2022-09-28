@@ -27,9 +27,10 @@ public class OmniKey implements Tangible {
     public void useItem(Tangible door) {
         if (door instanceof OmniDoor) {
             //TODO Complete the function
-            for (int index = 0; index < pinLength; index++) {
-                if (((OmniDoor) door).getFirstWrongPin(new OmniKey()) == 1){
-                    pins[index] = !pins[index];
+            boolean[] doorPins = ((OmniDoor) door).doorPins();
+            for (int index = 0; index < doorPins.length; index++) {
+                if (doorPins[index] != pins[index]) {
+                    pins[index] = doorPins[index];
                 }
             }
         } else {

@@ -3,7 +3,7 @@ package main.com.adventure.settings;
 public class AppSettings {
 
     /** You will update this property for each project. **/
-    public static final Story story = Story.MT7_MonsterScene;
+    public static final Story story = Story.MT8;
 
     public enum Story {
         TestScene,
@@ -18,8 +18,6 @@ public class AppSettings {
         MT6_TestDirections,
         MT7_MonsterScene,
         MT8,
-        MT9,
-
     }
 
     /**
@@ -49,5 +47,4 @@ public class AppSettings {
         }
         return startingLocation;
     }
-
 }

@@ -37,6 +37,7 @@ public class OmniDoor implements Tangible {
      * The pins, represented as booleans (true = up, false = down).
      */
     private final boolean[] pins = new boolean[pinCount];
+    private boolean[] doorPins = new boolean[pinCount];
 
 
     /**
@@ -94,12 +95,23 @@ public class OmniDoor implements Tangible {
                 wrongIndex = index;
                 break;
             } else {
-                if (index == (pinCount-1)) {
-                    return -1;
+                if (index == (pinCount - 1)) {
+                    return  -1;
                 }
             }
         }
         return wrongIndex;
+    }
+
+    /**
+     * The key will adjust to the door pin's, pin sequence.
+     * @return - returns the door pins
+     */
+    public boolean[] doorPins() {
+        for (int index = 0; index < pinCount; index++) {
+            doorPins[index] = pins[index];
+        }
+        return doorPins;
     }
 
     //Tangible implementation//
